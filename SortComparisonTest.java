@@ -27,6 +27,28 @@ import java.io.*;
  *  |1000 reverse order	|2.67	|2.33		|0.67	|0.67			|0
  *  |1000 sorted		|3		|1.33		|0.33	|0				|0.33
  *  
+ *  
+ *  A)	The order of input had the biggest impact on insertion sort. Since it does a swap for
+ *  	each individual pair and only moves one item per iterance, the running time is vastly
+ *  	increased when the order is reversed.
+ *  
+ *  B)	Insertion sort also has the biggest difference between best and worst performance (12 
+ *  	milliseconds). Again, this has to do with order of input and how it is managed by the
+ *  	algorithm.
+ *  
+ *  C)	The algorithm with the worst scalability is insertion sort, and this is because the
+ *  	number of swaps necessary for any operation affects running time severely when the
+ *  	input is large.
+ * 		The algorithm with the best scalability is iterative merge sort.
+ * 
+ *	D)	Although the running times were low on both, the iterative implementation had a running 
+ *		time of less than 0.5 milliseconds two times more than the recursive implementation did.
+ *		Also, the recursive implementation did horribly in the test with 1000 nearly ordered
+ *		numbers.
+ *
+ *	E)	Iterative merge sort was the fastest overall, with an average running time of 1/3ms or 
+ *		less for each test.
+ *  
  */
 @RunWith(JUnit4.class)
 public class SortComparisonTest
@@ -90,7 +112,6 @@ public class SortComparisonTest
     	assertEquals("1,2,3,4", test, SortComparison.quickSort(test));
     	assertEquals("1,2,3,4", test, SortComparison.mergeSortIterative(test));
     	assertEquals("1,2,3,4", test, SortComparison.mergeSortRecursive(test));
-    	//main(null);
     }
     
 
